@@ -8,7 +8,7 @@ var FormAbandonmentTracker = (function () {
     var elForm = document.querySelector(formSelector);
 
     // if the form selector is invalid, exit from the function
-    // might move this into #init()
+    // TODO: might move this into #init()
     if (!elForm) {
       return;
     }
@@ -16,8 +16,10 @@ var FormAbandonmentTracker = (function () {
     var elInputs = elForm.querySelectorAll("input[type='text']");
     var i;
 
+    // TODO: Need to modify this section into something more efficient
     for (i = 0; i < elInputs.length - 1; i = i + 1) {
       // attach event listeners to valid form fields
+      // TODO: Remove anon func and replace with defined func outside of loop
       elInputs[i].addEventListener("focus", function (e) {
         // record which fields have been focused and store them in array
         fieldsAccessed.push(this.name);
@@ -39,7 +41,6 @@ var FormAbandonmentTracker = (function () {
       }
     }
   };
-
 
   var pushDataToGoogle = function () {
     // data is outside for debug purposes

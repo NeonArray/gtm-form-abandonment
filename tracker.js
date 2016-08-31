@@ -4,15 +4,7 @@ var FormAbandonmentTracker = (function () {
   var fieldsAccessed = []; // An array to hold the fields that the user focused on
   var didSubmit = false; // only want to send data to Google if the form wasn't submitted
 
-  var createFormEventListeners = function (formSelector) {
-    var elForm = document.querySelector(formSelector);
-
-    // if the form selector is invalid, exit from the function
-    // TODO: might move this into #init()
-    if (!elForm) {
-      return;
-    }
-
+  var createFormEventListeners = function (elForm) {
     var elInputs = elForm.querySelectorAll("input[type='text']");
     var i;
 
@@ -54,7 +46,14 @@ var FormAbandonmentTracker = (function () {
 
   return {
     init: function (formSelector) {
-      createFormEventListeners(formSelector);
+      var elForm = document.querySelector(formSelector);
+      
+      // if the form selector is invalid, exit from the function
+      if (!elForm) {
+        return;
+      }
+
+      createFormEventListeners(elForm);
       createWindowEventListener();
     }
   };

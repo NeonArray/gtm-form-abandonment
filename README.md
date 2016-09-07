@@ -1,4 +1,4 @@
-# gtm-form-abandonment
+# Google Tag Manager - Form Abandonment
 A script to track form abandonment for use with Google Tag Manager.
 
 ##Usage

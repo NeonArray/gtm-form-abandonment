@@ -6,9 +6,14 @@ Replace the class name in the init instantiation with your form class. Then crea
 - Type: `Custom HTML`
 - HTML: Tracker.js wrapped inside a `<script></script>` tag
 - Triggering: `All Pages`
+
+Next, you'll need to create the Trigger:
+- Trigger Type: `Custom Event`
+- Event Name: `formAbandonment`
+- This trigger fires on: `All Custom Events`
   
-Right now I am only targeting form elements that are of `type=["text"]`. Currently I am only tracking if a user simply focuses on an element. 
+Right now I am only targeting form elements that are of `type=["text"]` and only if a user simply focuses on an said element. 
 
 ##TODO 
-- In the future I will add more functionality to require at least some activity inside each element before considering them 'manipulated.'
+- Require at least some activity inside each element before considering them 'manipulated' instead of just focusing the element
 - Add a timer and event to track how long a user spends filling out a form and which fields they take the longest
